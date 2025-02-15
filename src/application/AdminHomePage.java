@@ -17,7 +17,6 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-
 /**
  * AdminPage class represents the user interface for the admin user.
  * This page displays a simple welcome message for the admin.

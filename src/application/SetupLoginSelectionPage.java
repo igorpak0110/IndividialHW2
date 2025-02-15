@@ -24,8 +24,13 @@ public class SetupLoginSelectionPage {
     	// Buttons to select Login / Setup options that redirect to respective pages
         Button setupButton = new Button("SetUp");
         Button loginButton = new Button("Login");
+        Button question = new Button("Question");
         
-        //
+        question.setOnAction(a -> {
+        	new QuestionPage(databaseHelper).show(primaryStage);
+        });
+        
+        // gives the button a function to open the recovery password button
         setupButton.setOnAction(a -> {
             new SetupAccountPage(databaseHelper).show(primaryStage);
         });
@@ -35,7 +40,7 @@ public class SetupLoginSelectionPage {
 
         VBox layout = new VBox(10);
         layout.setStyle("-fx-padding: 20; -fx-alignment: center;");
-        layout.getChildren().addAll(setupButton, loginButton);
+        layout.getChildren().addAll(setupButton, loginButton, question);
 
         primaryStage.setScene(new Scene(layout, 800, 400));
         primaryStage.setTitle("Account Setup");
